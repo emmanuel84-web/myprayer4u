@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>To My Precious Gift &#x1F48C;</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>To My Precious Gift 💌</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
       background: linear-gradient(to bottom right, #ffe0ec, #ffd6fc);
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: scroll;
+      position: relative;
     }
 
-    .note {
+    .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100vh;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .note-wrapper {
+      width: 100%;
+      max-width: 600px;
+      height: 100%;
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       border-radius: 20px;
-      padding: 40px;
-      max-width: 600px;
-      text-align: center;
+      padding: 40px 25px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
       animation: fadeIn 1.5s ease-out;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 30px;
+      font-size: 32px;
       color: #d63384;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     p {
       font-size: 18px;
       color: #4b0082;
       line-height: 1.6;
+      margin: 15px 0;
+      text-align: center;
     }
 
     .signature {
@@ -45,6 +67,12 @@
       font-style: italic;
       font-size: 16px;
       color: #6a1b9a;
+      text-align: center;
+    }
+
+    b {
+      color: #d63384;
+      font-weight: bold;
     }
 
     @keyframes fadeIn {
@@ -58,7 +86,6 @@
       }
     }
 
-    /* Floating hearts */
     .heart {
       position: absolute;
       width: 20px;
@@ -67,30 +94,6 @@
       clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 50% 80%, 20% 100%, 0% 40%);
       animation: float 6s infinite ease-in-out;
       opacity: 0.6;
-    }
-
-    .heart:nth-child(1) {
-      top: 90%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .heart:nth-child(2) {
-      top: 100%;
-      left: 30%;
-      animation-delay: 1s;
-    }
-
-    .heart:nth-child(3) {
-      top: 110%;
-      left: 60%;
-      animation-delay: 2s;
-    }
-
-    .heart:nth-child(4) {
-      top: 120%;
-      left: 80%;
-      animation-delay: 3s;
     }
 
     @keyframes float {
@@ -107,54 +110,61 @@
         opacity: 0;
       }
     }
+
+    .heart:nth-child(n) {
+      top: 100%;
+      animation-delay: calc(1s * var(--i));
+      left: calc(5% + 3% * var(--i));
+    }
+
+    /* Smooth scroll for inner content */
+    .note-wrapper::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .note-wrapper::-webkit-scrollbar-thumb {
+      background: #ffb6c1;
+      border-radius: 10px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Floating hearts -->
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-   <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div> <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div> <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="heart"></div>
-  <div class="note">
-    <h1>To My One and Only Precious Gift &#x1F497;</h1>
-    <p>
-      From the very first moment I met you, I felt peace. Not just because of your name, but because your smile calms storms in my heart and your laughter fills the silence in ways I never knew I needed.</p>
-<p>
-You are so incredibly beautiful—not just in your looks, but in your heart, in the way you speak, the way you care, the way you light up every room you're in. Time with you feels like the kind of joy people spend their whole lives searching for.
+  <!-- Floating hearts will be generated below -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.setProperty('--i', i);
+      document.body.appendChild(heart);
+    }
+  </script>
 
-I don’t want to just admire you from a distance anymore. I want to walk this journey with you—not just as friends, but as something more, something deeper.</p>
-
-<p>So today, I’m asking, from the bottom of my heart—
-Will you be my girlfriend?
-Not just for now, but with the hope that one day, I’ll have the honor of calling you my wife.” &#x1F497; &#x1F382; &#x1F389;
-    </p>
-    <div class="signature">
-      With all my heart, Your Secret Admirer </div> i will be more thank happy to hear the gooodnews <b>YES. </b> <br>my Prayer, may God answer it.&#x1F497;
+  <div class="container">
+    <div class="note-wrapper">
+      <h1>To My One and Only Precious Gift 💗</h1>
+      <p>
+        From the very first moment I met you, I felt peace. Not just because of your name, but because your smile calms storms in my heart and your laughter fills the silence in ways I never knew I needed.
+      </p>
+      <p>
+        You are so incredibly beautiful—not just in your looks, but in your heart, in the way you speak, the way you care, the way you light up every room you're in. Time with you feels like the kind of joy people spend their whole lives searching for.
+      </p>
+      <p>
+        I don’t want to just admire you from a distance anymore. I want to walk this journey with you—not just as friends, but as something more, something deeper.
+      </p>
+      <p>
+        So today, I’m asking, from the bottom of my heart—<br />
+        <strong>Will you be my girlfriend?</strong><br />
+        Not just for now, but with the hope that one day, I’ll have the honor of calling you my wife. 💗 🎂 🎉
+      </p>
+      <div class="signature">
+        With all my heart,<br />
+        Your Secret Admirer <br /><br />
+        I will be more than happy to hear the good news: <b>YES</b>.<br />
+        My prayer—may God answer it. 💗
+      </div>
     </div>
-
   </div>
-	  	
+
 </body>
 </html>
